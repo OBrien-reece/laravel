@@ -10,11 +10,15 @@ class CompaniesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @retur
+      \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        //retrieve all companies
+        $companies = Company::all();
+        
+        return view('companies.index', ['companies'=> $companies]);
     }
 
     /**
