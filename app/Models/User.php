@@ -20,6 +20,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'city',
+        'role'
     ];
 
     /**
@@ -40,4 +45,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function tasks(){
+        return $this->belongsToMany('App\models\Task');
+    }
+
+     public function projects(){
+        return $this->belongsToMany('App\models\Project');
+    }
+
+    public function comments(){
+        return $this->hasMany('App\Models\Comment');
+    }
+
+    public function role(){
+        return $this->belongsTo('App\Models\Role');
+    }
+
+    public function companies(){
+        return $this->hasMany('App\Models\Company');
+    } 
+
 }
