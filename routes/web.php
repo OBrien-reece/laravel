@@ -21,8 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resourse('companies', 'CompaniesController');
-Route::resourse('projects', 'ProjectsController');
-Route::resourse('roles', 'RolesController');
-Route::resourse('tasks', 'TasksController');
-Route::resourse('users', 'UsersController');
+ Route::resource('companies', 'CompaniesController');
+ Route::resource('projects', 'ProjectsController');
+ Route::resource('roles', 'RolesController');
+ Route::resource('tasks', 'TasksController');
+ Route::resource('users', 'UsersController');
